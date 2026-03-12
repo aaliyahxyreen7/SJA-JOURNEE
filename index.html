@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Journee'</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins', sans-serif;
+background:linear-gradient(135deg,#0b3d2e,#1b5e20);
+min-height:100vh;
+padding:40px 20px;
+color:white;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:18px;
+box-shadow:0 10px 35px rgba(0,0,0,0.25);
+}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.title h1{
+font-family:'Playfair Display', serif;
+font-size:52px;
+color:#1b5e20;
+letter-spacing:3px;
+}
+
+.subtitle{
+color:#555;
+font-size:16px;
+margin-top:5px;
+}
+
+.underline{
+width:120px;
+height:5px;
+background:#f9a825;
+margin:12px auto;
+border-radius:10px;
+}
+
+.tabs{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+margin-bottom:35px;
+}
+
+.tab-btn{
+border:none;
+background:#e8f5e9;
+padding:10px 18px;
+border-radius:25px;
+cursor:pointer;
+font-size:14px;
+transition:0.3s;
+color:#1b5e20;
+}
+
+.tab-btn:hover{
+background:#f9a825;
+color:white;
+}
+
+.tab-btn.active{
+background:#1b5e20;
+color:white;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+
+.photo{
+position:relative;
+overflow:hidden;
+border-radius:14px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+cursor:pointer;
+}
+
+.photo img{
+width:100%;
+height:240px;
+object-fit:cover;
+transition:0.4s;
+}
+
+.photo:hover img{
+transform:scale(1.1);
+}
+
+.caption{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+background:linear-gradient(transparent,rgba(0,0,0,0.7));
+color:white;
+padding:10px;
+font-size:14px;
+text-align:center;
+}
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:35px;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:600px){
+
+.title h1{
+font-size:36px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+<h1>Journee'</h1>
+<div class="underline"></div>
+<div class="subtitle">Batch 2025 - 2026 Photo Gallery</div>
+</div>
+
+<div class="tabs">
+
+<button class="tab-btn active" data-filter="all">All</button>
+
+<button class="tab-btn" data-filter="james">St. James the Great (STEM)</button>
+
+<button class="tab-btn" data-filter="thomas">St. Thomas (STEM)</button>
+
+<button class="tab-btn" data-filter="matthew">St. Matthew (HUMSS)</button>
+
+<button class="tab-btn" data-filter="peter">St. Peter (STEM & ICT)</button>
+
+<button class="tab-btn" data-filter="jude">St. Jude Thaddeus (ABM)</button>
+
+<button class="tab-btn" data-filter="bartholomew">St. Bartholomew (STEM)</button>
+</div>
+
+<div class="gallery">
+
+<div class="photo james">
+<img src="images/james1.jpg">
+<div class="caption">St. James the Great</div>
+</div>
+
+<div class="photo james">
+<img src="images/james2.JPG">
+<div class="caption">St. James the Great (STEM)</div>
+</div>
+
+<div class="photo james">
+<img src="images/james3.JPG">
+<div class="caption">St. James the Great (STEM)</div>
+</div>
+
+<div class="photo james">
+<img src="images/james4.JPG">
+<div class="caption">St. James the Great (STEM)</div>
+</div>
+
+<div class="photo james">
+<img src="images/james5.jpg">
+<div class="caption">St. James the Great (STEM)</div>
+</div>
+<div class="photo thomas">
+<img src="images/thomas1.jpg">
+<div class="caption">St. Thomas</div>
+</div>
+
+<div class="photo thomas">
+<img src="images/thomas2.jpg">
+<div class="caption">St. Thomas (STEM)</div>
+</div>
+
+<div class="photo thomas">
+<img src="images/thomas3.jpg">
+<div class="caption">St. Thomas (STEM)</div>
+</div>
+
+<div class="photo thomas">
+<img src="images/thomas4.jpg">
+<div class="caption">St. Thomas (STEM)</div>
+</div>
+
+<div class="photo thomas">
+<img src="images/thomas5.jpg">
+<div class="caption">St. Thomas (STEM)</div>
+</div>
+
+<div class="photo thomas">
+<img src="images/thomas6.jpg">
+<div class="caption">St. Thomas (STEM)</div>
+</div>
+<div class="photo matthew">
+<img src="images/matthew1.jpg">
+<div class="caption">St. Matthew</div>
+</div>
+<div class="photo matthew">
+<img src="images/matthew2.jpg">
+<div class="caption">St. Matthew (HUMSS)</div>
+</div>
+
+<div class="photo matthew">
+<img src="images/matthew3.jpg">
+<div class="caption">St. Matthew (HUMSS)</div>
+</div>
+
+<div class="photo matthew">
+<img src="images/matthew4.jpg">
+<div class="caption">St. Matthew (HUMSS)</div>
+</div>
+
+<div class="photo matthew">
+<img src="images/matthew5.jpg">
+<div class="caption">St. Matthew (HUMSS)</div>
+</div>
+
+<div class="photo peter">
+<img src="images/peter1.jpg">
+<div class="caption">St. Peter</div>
+</div>
+
+<div class="photo peter">
+<img src="images/peter2.jpg">
+<div class="caption">St. Peter (STEM & ICT)</div>
+</div>
+
+<div class="photo peter">
+<img src="images/peter3.jpg">
+<div class="caption">St. Peter (STEM & ICT)</div>
+</div>
+
+<div class="photo peter">
+<img src="images/peter4.jpg">
+<div class="caption">St. Peter (STEM & ICT)</div>
+</div>
+<div class="photo jude">
+<img src="images/jude1.jpg">
+<div class="caption">St. Jude Thaddeus</div>
+</div>
+<div class="photo jude">
+<img src="images/jude2.jpg">
+<div class="caption">St. Jude Thaddeus (ABM)</div>
+</div>
+
+<div class="photo jude">
+<img src="images/jude3.jpg">
+<div class="caption">St. Jude Thaddeus (ABM)</div>
+</div>
+<div class="photo bartholomew">
+<img src="images/bartholomew1.jpg">
+<div class="caption">St. Bartholomew</div>
+</div>
+<div class="photo bartholomew">
+<img src="images/bartholomew2.jpg">
+<div class="caption">St. Bartholomew (STEM)</div>
+</div>
+<div class="photo bartholomew">
+<img src="images/bartholomew3.jpg">
+<div class="caption">St. Bartholomew (STEM)</div>
+</div>
+<div class="photo bartholomew">
+<img src="images/bartholomew4.jpg">
+<div class="caption">St. Bartholomew (STEM)</div>
+</div>
+<div class="photo bartholomew">
+<img src="images/bartholomew5.jpg">
+<div class="caption">St. Bartholomew (STEM)</div>
+</div>
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeLightbox()">✕</span>
+<img id="lightbox-img">
+</div>
+
+<script>
+
+const buttons=document.querySelectorAll(".tab-btn");
+const photos=document.querySelectorAll(".photo");
+
+buttons.forEach(button=>{
+button.addEventListener("click",()=>{
+
+buttons.forEach(btn=>btn.classList.remove("active"));
+button.classList.add("active");
+
+let filter=button.getAttribute("data-filter");
+
+photos.forEach(photo=>{
+
+if(filter==="all"){
+photo.style.display="block";
+}
+else if(photo.classList.contains(filter)){
+photo.style.display="block";
+}
+else{
+photo.style.display="none";
+}
+
+});
+
+});
+});
+
+const galleryImages=document.querySelectorAll(".photo img");
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightbox-img");
+
+galleryImages.forEach(img=>{
+img.addEventListener("click",()=>{
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+});
+});
+
+function closeLightbox(){
+lightbox.style.display="none";
+}
+
+</script>
+
+</body>
+</html>
